@@ -1,0 +1,21 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+div{
+    background: rgb(230,170,73);
+    background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
+
+body{
+    background-color: #f8f8f8;
+}
+h1{
+    color: white
+}
+h2{
+    font-size: 14px;
+    line-height:16px;
+    font-style:italic;
+    color: white;
+}

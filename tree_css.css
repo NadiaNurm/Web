@@ -1,0 +1,232 @@
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 600px;
+  background-color: #d1cee0;
+}
+.trunk,
+.branch {
+  border-radius: 25px;
+  background: linear-gradient(to right, #7f3333, #4d2020);
+}
+.trunk {
+  position: relative;
+  
+  width: 10px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.branch {
+  position: absolute;
+  
+  width: 5px;
+  
+  transform-origin: bottom center;
+}
+
+.branch:nth-child(even) {
+  transform: rotate(60deg);
+}
+
+.branch:nth-child(odd) {
+  transform: rotate(-60deg);
+}
+
+.branch:nth-child(1) {
+  top: 180px;
+  
+  height: 180px;
+}
+
+.branch:nth-child(2) {
+  top: 160px;
+
+  height: 150px;
+}
+
+.branch:nth-child(3) {
+  top: 120px;
+  height: 150px;
+}
+.branch:nth-child(4) {
+  top: 100px;
+  height: 120px;
+}
+
+.branch:nth-child(5) {
+  top: 60px;
+  height: 100px;
+}
+.branch:nth-child(6) {
+  top: 40px;
+  
+  height: 90px;
+}
+.branch:nth-child(7) {
+  top: 20px;
+  
+  height: 80px;
+}
+.branch:nth-child(8) {
+  top: 1px;
+  
+  height: 60px;
+}
+
+.leaf {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 75% 0 75% 0;
+  background: linear-gradient(to right, #77ed9e, #53ad71);
+}
+
+}
+.leaf:nth-child(1) {
+  top: 5px;
+}
+.leaf:nth-child(2) {
+  top: 20px;
+}
+
+.leaf:nth-child(3) {
+  top: 40px;
+}
+.leaf:nth-child(4) {
+  top: 60px;
+}
+.leaf:nth-child(5) {
+  top: 80px;
+}
+.leaf:nth-child(6) {
+  top: 100px;
+}
+
+
+@keyframes leaf-odd-grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.leaf:nth-child(odd) {
+  left: 100%;
+  transform-origin: 0% 100%;
+  animation-name: leaf-odd-grow;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+
+@keyframes leaf-even-grow {
+  0% {
+    transform: rotate(-90deg) scale(0);
+  }
+  100% {
+    transform: rotate(-90deg) scale(1);
+  }
+}
+
+.leaf:nth-child(even) {  
+  left: -150%;
+  transform-origin: 50% 100%;
+  animation-name: leaf-even-grow;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+
+.leaf:nth-child(1) {
+  top: 5px;
+  animation-delay: 2.5s;
+}
+
+.leaf:nth-child(2) {
+  top: 20px;
+  animation-delay: 2s;
+}
+
+.leaf:nth-child(3) {
+  top: 40px;
+  animation-delay: 3.5s;
+}
+.leaf:nth-child(4) {
+  top: 60px;
+  animation-delay: 3.5s;
+}
+.leaf:nth-child(5) {
+  top: 80px;
+  animation-delay: 3.5s;
+}
+.leaf:nth-child(6) {
+  top: 100px;
+  animation-delay: 3.5s;
+}
+
+.sun {
+  position:fixed;
+  width:50px;
+  height:50px;
+  left:100px;
+  top:200px;
+
+animation:
+    x 2s linear infinite alternate,
+    y 2s infinite cubic-bezier(0,500,0,500);
+animation-duration: 10s;
+}
+
+
+@keyframes x {
+   to {
+     left:1600px;
+   }
+}
+@keyframes y {
+   to {
+      top:199.5px;
+   }
+}
+.grass {
+    position: absolute;
+    top: 50%;
+    height: 50%;
+    width: 100%;
+    background: #42ab3f;
+}
+
+.apple {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 0%, rgba(229,252,69,1) 100%);
+}
+
+.apple:nth-child(even) {  
+  left: 100%;
+  transform-origin: 0% 100%;
+  animation-name: apple-grow;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+.apple:nth-child(odd) {
+  left: 100%;
+  transform-origin: 0% 100%;
+  animation-name: apple-grow;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+@keyframes apple-grow {
+  0% {
+    transform: rotate(-90deg) scale(0);
+  }
+  100% {
+    transform: rotate(-90deg) scale(1);
+  }
+}

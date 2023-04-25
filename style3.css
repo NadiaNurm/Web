@@ -1,0 +1,11 @@
+table {
+   width: 100%;
+}
+div {
+    background: url(https://static.wbstatic.net/marketing/logo/wb_logo_st_valentine_2023_2.png);
+   }
+body{
+    background-color: Pink;
+    font-size: 18px;
+font-family: 'Roboto', sans-serif;
+}
