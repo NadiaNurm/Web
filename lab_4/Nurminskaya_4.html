@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+    
+    <h1>2. Создайте объект – информация о покупателе (не менее 5 строк) и выведите три из них.</h1>
+   <p id="customer_info"></p>
+
+    <h1>3.	Создайте объекты пользователи, заказы и рестораны с соответствующими значениями. Организуйте вывод информации из объектов по условию </h1>
+  
+    <p id="order_info"></p>
+    <p id="res_info"></p>
+
+    <h1>4.При помощи функции-конструктора и оператора "new" создайте функцию, выводящую имена вашей группы </h1>
+    <p id="user_info"></p> 
+    <h1>5.	Используя конструктор, создайте объект – студент. Передайте конструктору параметры, определяющие, как создавать объект, и что в него записывать </h1>
+    <p id="student_info"></p>
+  
+    <script>
+      let customer = {
+          name: "Джон",
+          age: 30,
+          phone: "мужской",
+          email: "5%",
+          loyalty_program: "Premium",
+};
+
+
+customer.say_info = function() {
+            document.querySelector('#customer_info').innerHTML = 
+                `
+                    Имя: ${this.name}<br>
+                    Возраст: ${this.age}<br>
+                    Телефон: ${this.phone}<br>
+      `;
+            };
+customer.say_info(); 
+
+function Student(name, age, group) {
+          this.name = name;
+          this.age = age;
+          this.group = group;
+          this.showStudentInfo = function() {
+            document.querySelector('#student_info').innerHTML = `
+                    Имя: ${this.name}<br>
+                    Возраст: ${this.age}<br>
+                    Группа: ${this.group}<br>
+      `;
+  };
+}
+function User(name) {
+        this.name = name;
+        this.isAdmin = false;
+        this.sayHi = function() {
+        document.querySelector('#user_info').innerHTML = "Меня зовут: " + this.name;
+  };
+
+}
+function Order(order) {
+  this.order = order;
+  this.showInfoOrder = function() {
+        document.querySelector('#order_info').innerHTML = "Мой заказ: " +  this.order;
+  };
+}
+function Restaraunt(restaraunt) {
+  this.restaraunt = restaraunt;
+  this.showInfoRes = function() {
+        document.querySelector('#res_info').innerHTML = "Ресторан: " +  this.restaraunt;
+  };
+}
+    
+
+
+let order = new Order("Fish");
+order.showInfoOrder();
+let res = new Restaraunt("A");
+res.showInfoRes();
+
+let user1 = new User("Nadia");
+user1.sayHi();
+
+let student = new Student("Nadia", "25", "ПИ21-1в");
+student.showStudentInfo();
+    </script>
+</body>
+</html>
+
