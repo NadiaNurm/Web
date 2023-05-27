@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Калькулятор</title>
+</head>
+<body>
+  <h1>Калькулятор</h1>
+  <input type="number" id="num1"><br>
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select><br>
+  <input type="number" id="num2"><br>
+  <button onclick="calculate()">Вычислить</button>
+
+  <p id="result"></p>
+
+  <script>
+    let plus = (x, y) => x + y;
+
+    let minus = (x, y) => x - y;
+
+    let multiply = (x, y) => x * y;
+
+    let divide = (x, y) => {
+      if (y === 0) {
+        throw new Error('Деление на ноль!');
+      }
+      return x / y;
+    };
+
+    let calculator = (x, y, operator) => {
+      switch (operator) {
+        case '+':
+          return plus(x, y);
+        case '-':
+          return minus(x, y);
+        case '*':
+          return multiply(x, y);
+        case '/':
+          return divide(x, y);
+      }
+    };
+
+    let calculate = () => {
+      var num1 = Number(document.getElementById("num1").value);
+    
+      var num2 = Number(document.getElementById("num2").value);
+     
+      let operator = document.getElementById('operator').value;
+
+      
+      let result = calculator(num1, num2, operator);
+      document.getElementById('result').textContent = Math.round(result * 100) / 100;
+    
+    };
+  </script>
+</body>
+</html>
