@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+  <title>Калькулятор</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Тестовые задания</h1>
+<div>Сколько Вам лет?</div>
+    <input type="text" id="answer1">
+    <button onclick="func()">Проверить</button>
+    <div id="result"></div>
+    
+   <script>
+      let checkAnswer = function(question, answer) {
+        if (question.correctAnswer === answer) {
+          return 'Ответ на вопрос "' + question.text + '" верный<br>';
+        } else {
+          return 'Ответ на вопрос "' + question.text + '" неверный<br>';
+        }
+      };
+
+      let question1 = {
+        text: 'Сколько Вам лет?',
+        correctAnswer: '18'
+      };
+
+      let question2 = {
+        text: 'Какой сейчас год?',
+        correctAnswer: '2023'
+      };
+
+      function func(){
+        let answer1 = document.getElementById('answer1').value;
+
+        let result1 = checkAnswer(question1, answer1);
+
+        document.getElementById('result').innerHTML = result1;
+      }
+
+       
+      
+      questionsContainer.appendChild(button);
+    </script>
+  </body>
+</html>
